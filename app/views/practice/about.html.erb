@@ -1,0 +1,27 @@
+<!--remember, internal stylesheet in not the best, 
+	but we have no way to get a Ruby instance varible into a css file, 
+	so we dont have much of an alternative here -->
+
+
+
+<div id="color_me_in">
+	<p>
+		<%= @color %> BOX ACTIVATED!
+	</p>
+</div>
+
+<%= form_tag index_path do %>
+ <p><%= text_field_tag :name, nil, placeholder: "What's your name?" %></p>
+ <p><%= submit_tag :submit %></p>
+<% end %>
+
+<style>
+	
+	#color_me_in {
+		background-color: <%= @color %>;
+		color: white;
+		width: 250px;
+		height: 250px;
+	}
+
+</style>
